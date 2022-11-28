@@ -1,13 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Login from "./components/login/login";
+import Registration from "./components/login/registration";
+
+// export default function App() {
+//   return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+// }
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Amrita menu management app</p>
-      </header>
+      {/* <Login /> */}
+      <Registration />
     </div>
   );
 }
