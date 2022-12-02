@@ -1,16 +1,20 @@
 import "./App.css";
 import Login from "./components/login/login";
 import Registration from "./components/login/registration";
+import ToolBar from "./components/container/ToolBar";
+import Footer from "./components/container/Footer"
+import { useState } from "react";
 
-// export default function App() {
-//   return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
-// }
-
-function App() {
+const App=()=> {
+  const [form,setForm] = useState("login1")
   return (
     <div className="App">
-      {/* <Login /> */}
-      <Registration />
+      <ToolBar/>
+      <div className="flex items-center">
+        <img src="https://www.masalabox.com/wp-content/webp-express/webp-images/uploads/2022/08/order-1.png.webp" alt="Order"/>
+        {form==="login"?<Login/>:<Registration/>}
+      </div>
+      {/* <Footer className="s" /> */}
     </div>
   );
 }

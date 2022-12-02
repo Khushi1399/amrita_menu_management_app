@@ -1,112 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Registration = () => {
-  return (
-    <>
-      <section class="bg-amrita-bg bg-cover">
-        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-          <p className="flex items-center mb-6 text-3xl font-semibold text-gray-900">
-            AMRITA MENU MANAGEMENT APP
-          </p>
-          <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-blue-300 dark:border-stone-600">
-            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
-                Registration
-              </h1>
-              <form class="space-y-4 md:space-y-6" action="#">
-                <div>
-                  <label
-                    for="email"
-                    class="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Name"
-                    required=""
-                  />
-                </div>
-                <div>
-                  <label
-                    for="email"
-                    class="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="name@company.com"
-                    required=""
-                  />
-                </div>
-                <div>
-                  <label
-                    for="email"
-                    class="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    Phone
-                  </label>
-                  <input
-                    type="phone"
-                    name="phone"
-                    id="phone"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="name@company.com"
-                    required=""
-                  />
-                </div>
-                <div>
-                  <label
-                    for="password"
-                    class="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    placeholder="••••••••"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-white dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required=""
-                  />
-                </div>
-                <div>
-                  <label
-                    for="password"
-                    class="block mb-2 text-sm font-medium text-gray-900"
-                  >
-                    Confirm Password
-                  </label>
-                  <input
-                    type="password"
-                    name="password"
-                    id="confirm_password"
-                    placeholder="••••••••"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-white dark:border-white dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required=""
-                  />
-                </div>
 
-                <button
-                  type="submit"
-                  class="w-full bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                >
-                  Sign up
-                </button>
-              </form>
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (event) => {
+    setInputs(values => ({ ...values, [event.target.name]: event.target.value }))
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(inputs);
+  }
+
+  return (
+    <form className="w-full max-w-lg" onSubmit={handleSubmit}>
+      <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+          <label className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2" for="grid-first-name">
+            User Name
+          </label>
+          <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+            id="grid-first-name" type="text" placeholder="Jane" name="username" onChange={handleChange}/>
+          {/* <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"/> */}
+          {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
+        </div>
+        <div className="w-full md:w-1/2 px-3">
+          <label className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2" for="grid-last-name">
+            Email
+          </label>
+          <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-last-name" type="email" placeholder="Jane@email.com" name="email" onChange={handleChange}/>
+        </div>
+      </div>
+      <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="w-full px-3">
+          <label className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2" for="grid-password">
+            Password
+          </label>
+          <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-password" type="password" placeholder="******************" name="password" onChange={handleChange}/>
+          <p className="text-gray-600 text-xs italic">Make it unique and secure</p>
+        </div>
+      </div>
+      <div className="flex flex-wrap -mx-3 mb-6">
+        <div className="w-full px-3">
+          <label className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2" for="grid-password">
+            Confirm Password
+          </label>
+          <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+            id="grid-confirm-password" type="password" placeholder="******************" name="confirmpassword" onChange={handleChange}/>
+          <p className="text-gray-600 text-xs italic">Re-enter your password</p>
+        </div>
+      </div>
+      <div className="flex flex-wrap -mx-3 mb-2">
+        <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+          <label className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2" for="grid-city">
+            Roll Number
+          </label>
+          <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+           id="grid-city" type="text" placeholder="CB.EN.U4CSE21003" name="rollno" onChange={handleChange}/>
+        </div>
+        <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+          <label className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2" for="grid-state">
+            Role
+          </label>
+          <div className="relative">
+            <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+            id="grid-state" name="role" onChange={handleChange}>
+              <option value={"student/faculty"}>Student/Faculty</option>
+              <option value={"admin"}>Admin</option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
             </div>
           </div>
         </div>
-      </section>
-    </>
+        <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+          <label className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2" for="grid-zip">
+            Mobile Number
+          </label>
+          <input className="appearance-none block w-full bg-gray-200 text-pink-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
+          id="grid-zip" type="number" placeholder="9021012345" name="mobile" onChange={handleChange}/>
+        </div>
+      </div>
+      <div className="md:flex md:items-center">
+        <div className="md:w-1/3"></div>
+        <div className="md:w-2/3">
+          <button className="shadow bg-pink-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type=" submit button">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </form>
   );
 };
 
