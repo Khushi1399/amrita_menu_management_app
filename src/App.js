@@ -1,22 +1,23 @@
+import { ReactNotifications } from "react-notifications-component";
+import "react-notifications-component/dist/theme.css";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import ToolBar from "./components/container/ToolBar";
 import Login from "./components/login/login";
 import Registration from "./components/login/registration";
-import ToolBar from "./components/container/ToolBar";
-import Footer from "./components/container/Footer"
-import { useState } from "react";
 
-const App=()=> {
-  const [form,setForm] = useState("login1")
+const App = () => {
   return (
     <div className="App">
-      <ToolBar/>
-      <div className="flex items-center">
-        <img src="https://www.masalabox.com/wp-content/webp-express/webp-images/uploads/2022/08/order-1.png.webp" alt="Order"/>
-        {form==="login"?<Login/>:<Registration/>}
-      </div>
-      {/* <Footer className="s" /> */}
+      <ToolBar />
+      <ReactNotifications />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Registration />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;
