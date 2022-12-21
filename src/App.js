@@ -5,6 +5,8 @@ import "./App.css";
 import ToolBar from "./components/container/ToolBar";
 import Login from "./components/login/login";
 import Registration from "./components/login/registration";
+import ForgotPassword from "./components/login/forgotpassword";
+import NewPassword from "./components/login/newpassword";
 
 const App = () => {
   return (
@@ -12,9 +14,11 @@ const App = () => {
       <ToolBar />
       <ReactNotifications />
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Login />}/>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
+        <Route path="/forgot" element={<ForgotPassword/>}/>
+        <Route path="/new" element={<NewPassword/>}/>
       </Routes>
     </div>
   );
