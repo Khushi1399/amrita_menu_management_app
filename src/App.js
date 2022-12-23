@@ -8,6 +8,7 @@ import Registration from "./components/login/registration";
 import ForgotPassword from "./components/login/forgotpassword";
 import NewPassword from "./components/login/newpassword";
 import Home from "./components/login/home";
+import SelectCanteen from "./components/selectCanteen/selectCanteen";
 
 const App = () => {
   return (
@@ -19,9 +20,9 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
-        <Route path="/forgot" element={<ForgotPassword />} />
-        <Route path="/canteen-selection" element={<Home />} />
         <Route path="/new" element={<NewPassword />} />
+        <Route path="/forgot" element={<ForgotPassword />} />
+        <Route path="/select" element={<SelectCanteen />} />
       </Routes>
     </div>
   );
