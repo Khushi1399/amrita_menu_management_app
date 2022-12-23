@@ -7,6 +7,7 @@ import Login from "./components/login/login";
 import Registration from "./components/login/registration";
 import ForgotPassword from "./components/login/forgotpassword";
 import NewPassword from "./components/login/newpassword";
+import SelectCanteen from "./components/selectCanteen/selectCanteen";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/register" element={<Registration />} />
         <Route path="/forgot" element={<ForgotPassword/>}/>
         <Route path="/new" element={<NewPassword/>}/>
+        <Route path="/select" element={<SelectCanteen/>}/>
       </Routes>
     </div>
   );

@@ -45,7 +45,7 @@ const Registration = () => {
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
-                for="grid-first-name"
+                htmlFor="grid-first-name"
               >
                 Name
               </label>
@@ -63,7 +63,7 @@ const Registration = () => {
             <div className="w-full md:w-1/2 px-3">
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
-                for="grid-last-name"
+              htmlFor="grid-last-name"
               >
                 Email
               </label>
@@ -81,7 +81,7 @@ const Registration = () => {
             <div className="w-full px-3">
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
-                for="grid-password"
+                htmlFor="grid-password" 
               >
                 Password
               </label>
@@ -102,7 +102,7 @@ const Registration = () => {
             <div className="w-full px-3">
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
-                for="grid-password"
+                htmlFor="grid-password"
               >
                 Confirm Password
               </label>
@@ -123,7 +123,7 @@ const Registration = () => {
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
-                for="grid-city"
+                htmlFor="grid-city"
               >
                 Roll Number
               </label>
@@ -139,7 +139,7 @@ const Registration = () => {
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
-                for="grid-state"
+                htmlFor="grid-state"
               >
                 Role
               </label>
@@ -167,7 +167,7 @@ const Registration = () => {
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
-                for="grid-zip"
+                htmlFor="grid-zip"
               >
                 Mobile Number
               </label>

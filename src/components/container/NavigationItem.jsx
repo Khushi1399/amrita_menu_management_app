@@ -2,7 +2,7 @@ import React from "react";
 
 const NavigationItem = (props) => {
     return (
-        <li className="NavigationItem" class="hover:text-sky-400">
+        <li className="NavigationItem hover:text-sky-400">
             <a href={props.link}>
                 {props.children}
             </a>

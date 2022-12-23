@@ -1,0 +1,141 @@
+{
+    "mainCanteenMenuList": [
+        {
+            "id": 1,
+            "itemName": "Gobi 65 main",
+            "itemPrice": 65,
+            "itemQuantity": 10,
+            "itemCategory": "specials",
+            "canteenName": "mainC"
+        },
+        {
+            "id": 2,
+            "itemName": "egg rice main",
+            "itemPrice": 75,
+            "itemQuantity": 10,
+            "itemCategory": "mains",
+            "canteenName": "mainC"
+        },
+        {
+            "id": 3,
+            "itemName": "egg noodels main",
+            "itemPrice": 65,
+            "itemQuantity": 10,
+            "itemCategory": "mains",
+            "canteenName": "mainC"
+        },
+        {
+            "id": 4,
+            "itemName": "apple juice main",
+            "itemPrice": 65,
+            "itemQuantity": 10,
+            "itemCategory": "drinks",
+            "canteenName": "mainC"
+        }
+    ],
+    "mbaCanteenMenuList": [
+        {
+            "id": 1,
+            "itemName": "Gobi 65 mbamenu",
+            "itemPrice": 65,
+            "itemQuantity": 10,
+            "itemCategory": "specials",
+            "canteenName": "mbaC"
+        },
+        {
+            "id": 2,
+            "itemName": "egg rice mbamenu",
+            "itemPrice": 75,
+            "itemQuantity": 10,
+            "itemCategory": "mains",
+            "canteenName": "mbaC"
+        },
+        {
+            "id": 3,
+            "itemName": "egg noodels mbamenu",
+            "itemPrice": 65,
+            "itemQuantity": 10,
+            "itemCategory": "mains",
+            "canteenName": "mbaC"
+        },
+        {
+            "id": 4,
+            "itemName": "apple juice mbamenu",
+            "itemPrice": 65,
+            "itemQuantity": 10,
+            "itemCategory": "drinks",
+            "canteenName": "mbaC"
+        }
+    ],
+    "itCanteenMenuList": [
+        {
+            "id": 1,
+            "itemName": "Gobi 65 itmenu",
+            "itemPrice": 65,
+            "itemQuantity": 10,
+            "itemCategory": "specials",
+            "canteenName": "itC"
+        },
+        {
+            "id": 2,
+            "itemName": "egg rice itmenu",
+            "itemPrice": 75,
+            "itemQuantity": 10,
+            "itemCategory": "mains",
+            "canteenName": "itC"
+        },
+        {
+            "id": 3,
+            "itemName": "egg noodels itmenu",
+            "itemPrice": 65,
+            "itemQuantity": 10,
+            "itemCategory": "mains",
+            "canteenName": "itC"
+        },
+        {
+            "id": 4,
+            "itemName": "apple juice itmenu",
+            "itemPrice": 65,
+            "itemQuantity": 10,
+            "itemCategory": "drinks",
+            "canteenName": "itC"
+        }
+    ],
+    "messMenuList": [
+        {
+            "id": 1,
+            "itemName": "brinjal sambar",
+            "dayOfWeek": "monday"
+        },
+        {
+            "id": 2,
+            "itemName": "cabbage",
+            "dayOfWeek": "monday"
+        },
+        {
+            "id": 3,
+            "itemName": "tomato rasam",
+            "dayOfWeek": "monday"
+        },
+        {
+            "id": 4,
+            "itemName": "carrot sambar",
+            "dayOfWeek": "tuesday"
+        },
+        {
+            "id": 5,
+            "itemName": "beetroot",
+            "dayOfWeek": "tuesday"
+        },
+        {
+            "id": 6,
+            "itemName": "garlic rasam",
+            "dayOfWeek": "tuesday"
+        },
+        {
+            "id": 7,
+            "itemName": "chapati",
+            "dayOfWeek": "tuesday"
+        }
+    ]
+}
