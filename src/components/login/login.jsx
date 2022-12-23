@@ -5,7 +5,6 @@ import useLogin from "../hooks/useLogin";
 
 const Login = () => {
   const [inputs, setInputs] = useState({});
-
   const { formik } = useLogin();
 
   const handleChange = (event) => {
@@ -37,7 +36,7 @@ const Login = () => {
                 className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
                 id="username"
                 type="text"
-                placeholder="Jane Doe"
+                placeholder="CB.EN.P2CSE2200X"
                 name="username"
                 {...formik.getFieldProps("username")}
                 // onChange={handleChange}
@@ -99,18 +98,22 @@ const Login = () => {
             </div>
           </div>
         </form>
-          <div className="md:flex md:items-center mb-6">
-            <div className="md:w-1/3">
+        <div className="md:flex md:items-center mb-6">
+          <div className="md:w-1/3">
             <label className="md:w-2/3 block text-pink-500 font-bold">
-              <Link to={"/register"}><span className="text-sm">Sign up</span></Link>
+              <Link to={"/register"}>
+                <span className="text-sm">Sign up</span>
+              </Link>
             </label>
-            </div>
-            <div className="md:w-2/3">
-            <label className="md:w-2/3 block text-pink-500 font-bold">
-              <Link to={"/forgot"}><span className="text-sm">Forgot Password?</span></Link>
-            </label>
-            </div>
           </div>
+          <div className="md:w-2/3">
+            <label className="md:w-2/3 block text-pink-500 font-bold">
+              <Link to={"/forgot"}>
+                <span className="text-sm">Forgot Password?</span>
+              </Link>
+            </label>
+          </div>
+        </div>
       </div>
     </div>
   );

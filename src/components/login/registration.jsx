@@ -15,18 +15,17 @@ const Registration = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log(inputs);
+    const { roleId, confirmpassword, ...other } = inputs;
+
     await axios
       .post("http://10.11.130.170:8080/api/auth/register", {
-        username: "jack Doe",
-        email: "rty@mail.com",
+        ...other,
         role: ["user"],
-        password: "amrita99",
-        rollNo: "11220",
-        mobileNo: "9999990000",
       })
       .then(function (response) {
         console.log(response);
         Toast(response.data?.message);
+        setInputs({});
       })
       .catch(function (error) {
         console.log(error);
@@ -132,7 +131,7 @@ const Registration = () => {
                 id="grid-city"
                 type="text"
                 placeholder="CB.EN.U4CSE21003"
-                name="rollno"
+                name="rollNo"
                 onChange={handleChange}
               />
             </div>
@@ -147,7 +146,7 @@ const Registration = () => {
                 <select
                   className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
-                  name="role"
+                  name="roleId"
                   onChange={handleChange}
                 >
                   <option value={"student/faculty"}>Student/Faculty</option>
@@ -176,7 +175,7 @@ const Registration = () => {
                 id="grid-zip"
                 type="number"
                 placeholder="9021012345"
-                name="mobile"
+                name="mobileNo"
                 onChange={handleChange}
               />
             </div>

@@ -2,8 +2,11 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import Toast from "../helper/toast";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const useLogin = () => {
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -19,12 +22,13 @@ const useLogin = () => {
   });
 
   const handleSubmit = async (values) => {
-    console.log("first", values);
+    console.log("api data", values);
     await axios
-      .post("http://10.11.130.170:8080/api/auth/signin", values)
-      .then(function (response) {
-        console.log(response);
+      .post(`${process.env.REACT_APP_API1}signin`, values)
+      .then((response) => {
         Toast("User logged in successfully!");
+        navigate("/canteen-selection");
+        Cookies.set("amritaMenu", response?.data?.jwt);
       })
       .catch(function (error) {
         console.log(error);

@@ -7,18 +7,21 @@ import Login from "./components/login/login";
 import Registration from "./components/login/registration";
 import ForgotPassword from "./components/login/forgotpassword";
 import NewPassword from "./components/login/newpassword";
+import Home from "./components/login/home";
 
 const App = () => {
   return (
     <div className="App">
       <ToolBar />
       <ReactNotifications />
+      <script type="module" src="/path/to/js.cookie.mjs"></script>
       <Routes>
-        <Route path="/" element={<Login />}/>
+        <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
-        <Route path="/forgot" element={<ForgotPassword/>}/>
-        <Route path="/new" element={<NewPassword/>}/>
+        <Route path="/forgot" element={<ForgotPassword />} />
+        <Route path="/canteen-selection" element={<Home />} />
+        <Route path="/new" element={<NewPassword />} />
       </Routes>
     </div>
   );
