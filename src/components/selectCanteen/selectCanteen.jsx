@@ -4,13 +4,12 @@ import Toast from "../helper/toast";
 import CanteenSpecial from "./canteenSpecial";
 import menus from "../../local-json/menu.json"
 
-let canteens = ['Main Canteen','MBA Canteen','IT Canteen','Mess']
-let canteensList = ["mainCanteenMenuList"]
-console.log(canteensList);
+let canteens = ['Main Canteen', 'MBA Canteen', 'IT Canteen', 'Mess']
+
 const SelectCanteen = () => {
   const [inputs, setInputs] = useState({});
-  const [menu,setMenu] = useState([]);
-
+  let canteensList = Object.values(menus).filter(canteen => { return canteen })
+  // console.log(canteensList);
   const handleChange = (event) => {
     setInputs((values) => ({
       ...values,
@@ -44,12 +43,15 @@ const SelectCanteen = () => {
       <img
         className="mt-20 ml-10"
         // src="https://www.masalabox.com/wp-content/webp-express/webp-images/uploads/2022/08/order-1.png.webp"
-        src = "https://simg.nicepng.com/png/small/9-94335_location-icon-location-icon-png-blue.png"
+        src="https://simg.nicepng.com/png/small/9-94335_location-icon-location-icon-png-blue.png"
+        // src="https://media.kulfyapp.com/2JG0EK/2JG0EK-360.gif"
         alt="Order"
       />
       <div className="grid grid-cols-2">
-        <div className="pl-20">
+        <div className="pl-10">
+
           <form className="w-auto max-w-lg" onSubmit={handleSubmit}>
+            <label className="block uppercase tracking-wide text-pink-500 text-2xl font-bold mb-2">WELCOME USER</label>
             <div>
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
@@ -64,7 +66,7 @@ const SelectCanteen = () => {
                   name="role"
                   onChange={handleChange}
                 >
-                  <option value={"Mess"}>Mess</option>
+                  <option value={"Mess"} disabled>Mess</option>
                   <option value={"main"}>Main Canteen</option>
                   <option value={"mba"}>MBA Canteen</option>
                   <option value={"it"}>IT Canteen</option>
@@ -85,15 +87,14 @@ const SelectCanteen = () => {
             </div>
           </form>
         </div>
-        <div className="grid grid-cols-2 hover:grid-cols-2 pl-20">
-            {
-              canteens.map((canteen,index)=>{
-                return <CanteenSpecial key={index} list={menus.mainCanteenMenuList}>{canteen}</CanteenSpecial>
-              })
-            }
+        <div className="grid grid-cols-2 hover:grid-cols-2 pl-20 p-7">
+          {
+            canteens.map((canteen, index) => {
+              return <CanteenSpecial key={index} list={canteensList[index]}>{canteen}</CanteenSpecial>
+            })
+          }
         </div>
       </div>
-            {console.log(menu)}
     </div>
   );
 };

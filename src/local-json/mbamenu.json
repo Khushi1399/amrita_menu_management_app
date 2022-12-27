@@ -1,0 +1,154 @@
+{
+    "canteenMenu": [
+        {
+            "id": 1,
+            "itemName": "Gobi 65",
+            "itemPrice": 65,
+            "itemQuantity": 0,
+            "category": "mains"
+        },
+        {
+            "id": 2,
+            "itemName": "Egg rice",
+            "itemPrice": 75,
+            "itemQuantity": 0,
+            "category": "mains"
+        },
+        {
+            "id": 3,
+            "itemName": "Egg noodles",
+            "itemPrice": 65,
+            "itemQuantity": 0,
+            "category": "mains"
+        },
+        {
+            "id": 4,
+            "itemName": "Apple juice",
+            "itemPrice": 65,
+            "itemQuantity": 0,
+            "category": "drinks"
+        },
+        {
+            "id": 5,
+            "itemName": "Mosambi juice",
+            "itemPrice": 65,
+            "itemQuantity": 0,
+            "category": "drinks"
+        },
+        {
+            "id": 6,
+            "itemName": "Mr. Soda",
+            "itemPrice": 10,
+            "itemQuantity": 0,
+            "category": "drinks"
+        },
+        {
+            "id": 7,
+            "itemName": "Burger",
+            "itemPrice": 50,
+            "itemQuantity": 0,
+            "category": "snacks"
+        },
+        {
+            "id": 8,
+            "itemName": "Veg Puffs",
+            "itemPrice": 20,
+            "itemQuantity": 0,
+            "category": "snacks"
+        },
+        {
+            "id": 9,
+            "itemName": "Veg Roll",
+            "itemPrice": 30,
+            "itemQuantity": 0,
+            "category": "snacks"
+        },
+        {
+            "id": 10,
+            "itemName": "Masala Poori",
+            "itemPrice": 30,
+            "itemQuantity": 0,
+            "category": "chaat"
+        },
+        {
+            "id": 11,
+            "itemName": "Bhel Poori",
+            "itemPrice": 30,
+            "itemQuantity": 0,
+            "category": "chaat"
+        },
+        {
+            "id": 12,
+            "itemName": "Dahi Papdi",
+            "itemPrice": 30,
+            "itemQuantity": 0,
+            "category": "chaat"
+        },
+        {
+            "id": 13,
+            "itemName": "Coconut Payasam",
+            "itemPrice": 40,
+            "itemQuantity": 0,
+            "category": "snacks"
+        }
+        ,
+        {
+            "id": 14,
+            "itemName": "Chocolate",
+            "itemPrice": 5,
+            "itemQuantity": 0,
+            "category": "snacks"
+        }
+        ,
+        {
+            "id": 15,
+            "itemName": "Mushroom Briyani",
+            "itemPrice": 70,
+            "itemQuantity": 0,
+            "category": "mains"
+        },
+        {
+            "id": 16,
+            "itemName": "Masala Dosa",
+            "itemPrice": 60,
+            "itemQuantity": 0,
+            "category": "mains"
+        },
+        {
+            "id": 17,
+            "itemName": "Butter Milk",
+            "itemPrice": 10,
+            "itemQuantity": 0,
+            "category": "drinks"
+        },
+        {
+            "id": 18,
+            "itemName": "Vada Pav",
+            "itemPrice": 30,
+            "itemQuantity": 0,
+            "category": "chaat"
+        },
+        {
+            "id": 19,
+            "itemName": "Cookies",
+            "itemPrice": 30,
+            "itemQuantity": 0,
+            "category": "snacks"
+        },
+        {
+            "id": 20,
+            "itemName": "Lays",
+            "itemPrice": 10,
+            "itemQuantity": 0,
+            "category": "snacks"
+        },
+        {
+            "id": 21,
+            "itemName": "Idly",
+            "itemPrice": 30,
+            "itemQuantity": 0,
+            "category": "mains"
+        }
+        
+    ]
+}
