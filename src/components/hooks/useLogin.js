@@ -26,9 +26,15 @@ const useLogin = () => {
     await axios
       .post(`${process.env.REACT_APP_API1}signin`, values)
       .then((response) => {
+        const { email, username, jwt, rollNo } = response?.data;
         Toast("User logged in successfully!");
         navigate("/select");
-        Cookies.set("amritaMenu", response?.data?.jwt);
+        console.log("login", JSON.stringify({ email, username, rollNo }));
+        localStorage.setItem(
+          "USER",
+          JSON.stringify({ email, username, rollNo })
+        );
+        Cookies.set("amritaMenu", jwt);
       })
       .catch(function (error) {
         console.log(error);

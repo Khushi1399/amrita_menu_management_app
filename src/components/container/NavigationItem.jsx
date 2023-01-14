@@ -2,7 +2,10 @@ import React from "react";
 
 const NavigationItem = ({ handleClick = () => false, ...props }) => {
   return (
-    <li className="NavigationItem hover:text-sky-400" onClick={handleClick}>
+    <li
+      className="uppercase NavigationItem hover:text-sky-400"
+      onClick={handleClick}
+    >
       <a href={props.link}>{props.children}</a>
     </li>
   );

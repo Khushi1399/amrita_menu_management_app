@@ -7,7 +7,7 @@ const CanteenSpecial = (props) => {
         {props.children}
       </label>
       <ol>
-        {props.list.map((item) => {
+        {props?.list?.map((item) => {
           return <li key={item.id}>{item.itemName}</li>;
         })}
       </ol>

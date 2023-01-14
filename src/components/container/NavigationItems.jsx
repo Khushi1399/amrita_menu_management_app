@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 const NavigationItems = () => {
   const cookieVal = Cookies.get("amritaMenu");
   const [cookie, setCookie] = useState(cookieVal);
+  const userData = JSON.parse(localStorage.getItem("USER"));
 
   return (
     <ul className="NavigationItems flex items-center space-x-10 text-xl pl-20 font-semibold text-slate-50">
@@ -19,8 +20,11 @@ const NavigationItems = () => {
         </>
       ) : (
         <>
-          <NavigationItem link="/login" handleClick={() => {}}>
-            WELCOME USER
+          <NavigationItem link="/order" handleClick={() => {}}>
+            {`WELCOME ${userData.username}`}
+          </NavigationItem>
+          <NavigationItem link="/history" handleClick={() => {}}>
+            Order History
           </NavigationItem>
           <NavigationItem
             link="/login"
