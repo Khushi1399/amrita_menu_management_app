@@ -8,6 +8,8 @@ import Login from "./components/login/login";
 import NewPassword from "./components/login/newpassword";
 import Registration from "./components/login/registration";
 import SelectCanteen from "./components/selectCanteen/selectCanteen";
+import OrderMain from "./components/order/orderMain";
+import OrderHistory from "./components/payment/orderHistory";
 
 const App = () => {
   return (
@@ -19,9 +21,12 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
-        <Route path="/new" element={<NewPassword />} />
         <Route path="/forgot" element={<ForgotPassword />} />
+        <Route path="/new" element={<NewPassword />} />
         <Route path="/select" element={<SelectCanteen />} />
+        <Route path="/order" element={<OrderMain />} />
+        <Route path="/history" element={<OrderHistory />} />
+        <Route path="/logout" element={<Login />} />
       </Routes>
     </div>
   );
