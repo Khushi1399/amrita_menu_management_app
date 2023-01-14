@@ -5,6 +5,7 @@ const PaymentMain = (props) => {
         <div>
             <div className="text-sm text-gray-500 shadow-md pl-10 mt-5 w-90">
             <h2 className="block uppercase tracking-wide text-pink-700 text-2xl font-bold mb-4">YOUR ORDER</h2>
+            {console.log(props.items)}
                 {
                     props.items.length > 0 ? props.items.map(item =>
                         <div key={item.id} className='grid grid-cols-4'>

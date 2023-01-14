@@ -14,6 +14,6 @@ const OrderTable = (props) => {
             }
         </div>
     );
-}
+} 
 
 export default OrderTable;

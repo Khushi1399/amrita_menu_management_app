@@ -51,7 +51,7 @@ const SelectCanteen = () => {
         <div className="pl-10">
 
           <form className="w-auto max-w-lg" onSubmit={handleSubmit}>
-            <label className="block uppercase tracking-wide text-pink-500 text-2xl font-bold mb-2">WELCOME USER</label>
+            <label className="block uppercase tracking-wide text-pink-500 text-2xl font-bold mb-2">WELCOME "---USER---"</label>
             <div>
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
