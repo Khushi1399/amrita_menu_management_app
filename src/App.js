@@ -3,11 +3,10 @@ import "react-notifications-component/dist/theme.css";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import ToolBar from "./components/container/ToolBar";
-import Login from "./components/login/login";
-import Registration from "./components/login/registration";
 import ForgotPassword from "./components/login/forgotpassword";
+import Login from "./components/login/login";
 import NewPassword from "./components/login/newpassword";
-import Home from "./components/login/home";
+import Registration from "./components/login/registration";
 import SelectCanteen from "./components/selectCanteen/selectCanteen";
 
 const App = () => {

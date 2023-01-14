@@ -20,8 +20,8 @@ const Login = () => {
         src="https://www.masalabox.com/wp-content/webp-express/webp-images/uploads/2022/08/order-1.png.webp"
         alt="Order"
       />
-      <div className="pl-20">
-        <form className="w-full max-w-sm" onSubmit={formik.handleSubmit}>
+      <div className="pl-80">
+        <form className="w-full max-w-sm text-s" onSubmit={formik.handleSubmit}>
           <div className="md:flex md:items-center mb-6">
             <div className="md:w-1/3">
               <label

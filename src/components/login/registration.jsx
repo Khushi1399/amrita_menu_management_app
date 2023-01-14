@@ -1,45 +1,17 @@
-import React, { useState } from "react";
-import axios from "axios";
-import Toast from "../helper/toast";
+import React from "react";
+import useRegistration from "../hooks/useRegistration";
 
 const Registration = () => {
-  const [inputs, setInputs] = useState({});
-
-  const handleChange = (event) => {
-    setInputs((values) => ({
-      ...values,
-      [event.target.name]: event.target.value,
-    }));
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log(inputs);
-    const { roleId, confirmpassword, ...other } = inputs;
-
-    await axios
-      .post("http://10.11.130.170:8080/api/auth/register", {
-        ...other,
-        role: ["user"],
-      })
-      .then(function (response) {
-        console.log(response);
-        Toast(response.data?.message);
-        setInputs({});
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+  const { formik } = useRegistration();
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center justify-between">
       <img
         src="https://www.masalabox.com/wp-content/webp-express/webp-images/uploads/2022/08/order-1.png.webp"
         alt="Order"
       />
-      <div className="pl-20">
-        <form className="w-full max-w-lg" onSubmit={handleSubmit}>
+      <div className="pr-80 m-20 text-xl">
+        <form className="w-full max-w-lg" onSubmit={formik.handleSubmit}>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
@@ -54,15 +26,18 @@ const Registration = () => {
                 type="text"
                 placeholder="Jane"
                 name="username"
-                onChange={handleChange}
+                {...formik.getFieldProps("username")}
               />
-              {/* <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane"/> */}
-              {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
+              {formik.touched.username && formik.errors.username ? (
+                <div className="relative pt-1 pl-1 text-xs text-red-400">
+                  {formik.errors.username}
+                </div>
+              ) : null}
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
-              htmlFor="grid-last-name"
+                htmlFor="grid-last-name"
               >
                 Email
               </label>
@@ -72,15 +47,20 @@ const Registration = () => {
                 type="email"
                 placeholder="Jane@email.com"
                 name="email"
-                onChange={handleChange}
+                {...formik.getFieldProps("email")}
               />
+              {formik.touched.email && formik.errors.email ? (
+                <div className="relative pt-1 pl-1 text-xs text-red-400">
+                  {formik.errors.email}
+                </div>
+              ) : null}
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full px-3">
               <label
                 className="block uppercase tracking-wide text-pink-700 text-xs font-bold mb-2"
-                htmlFor="grid-password" 
+                htmlFor="grid-password"
               >
                 Password
               </label>
@@ -90,8 +70,13 @@ const Registration = () => {
                 type="password"
                 placeholder="**********"
                 name="password"
-                onChange={handleChange}
+                {...formik.getFieldProps("password")}
               />
+              {formik.touched.password && formik.errors.password ? (
+                <div className="relative pt-1 pl-1 text-xs text-red-400">
+                  {formik.errors.password}
+                </div>
+              ) : null}
               <p className="text-gray-600 text-xs italic">
                 Make it unique and secure
               </p>
@@ -111,8 +96,14 @@ const Registration = () => {
                 type="password"
                 placeholder="**********"
                 name="confirmpassword"
-                onChange={handleChange}
+                {...formik.getFieldProps("confirmpassword")}
               />
+              {formik.touched.confirmpassword &&
+              formik.errors.confirmpassword ? (
+                <div className="relative pt-1 pl-1 text-xs text-red-400">
+                  {formik.errors.confirmpassword}
+                </div>
+              ) : null}
               <p className="text-gray-600 text-xs italic">
                 Re-enter your password
               </p>
@@ -132,8 +123,15 @@ const Registration = () => {
                 type="text"
                 placeholder="CB.EN.U4CSE21003"
                 name="rollNo"
-                onChange={handleChange}
+                {...formik.getFieldProps("rollNo")}
+
+                // onChange={handleChange}
               />
+              {formik.touched.rollNo && formik.errors.rollNo ? (
+                <div className="relative pt-1 pl-1 text-xs text-red-400">
+                  {formik.errors.rollNo}
+                </div>
+              ) : null}
             </div>
             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
               <label
@@ -147,7 +145,7 @@ const Registration = () => {
                   className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-state"
                   name="roleId"
-                  onChange={handleChange}
+                  {...formik.getFieldProps("roleId")}
                 >
                   <option value={"student/faculty"}>Student/Faculty</option>
                   <option value={"admin"}>Admin</option>
@@ -176,8 +174,13 @@ const Registration = () => {
                 type="number"
                 placeholder="9021012345"
                 name="mobileNo"
-                onChange={handleChange}
+                {...formik.getFieldProps("mobileNo")}
               />
+              {formik.touched.mobileNo && formik.errors.mobileNo ? (
+                <div className="relative pt-1 pl-1 text-xs text-red-400">
+                  {formik.errors.mobileNo}
+                </div>
+              ) : null}
             </div>
           </div>
           <div className="md:flex md:items-center">

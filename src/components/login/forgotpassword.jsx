@@ -1,25 +1,10 @@
-import React, { useState } from "react";
-import axios from "axios";
-import Toast from "../helper/toast";
+import React from "react";
 import useForgotPass from "../hooks/useForgotPass";
+import useOtp from "../hooks/useOtp";
 
 const ForgotPassword = () => {
-  const { formik, formik1 } = useForgotPass();
-
-  const handleOTPSubmit = async (values) => {
-    await axios
-      .post("http://192.168.60.110:8080/api/auth/verifyOtp", {
-        userOtp: "15089",
-        emailId: "darshansampathkumar@gmail.com",
-      })
-      .then((response) => {
-        console.log(response);
-        Toast(response?.data?.message);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+  const { formik } = useForgotPass();
+  const { formik1 } = useOtp();
 
   return (
     <div className="flex items-center">
@@ -50,6 +35,11 @@ const ForgotPassword = () => {
                 name="emailId"
                 {...formik.getFieldProps("emailId")}
               />
+              {formik.touched.emailId && formik.errors.emailId ? (
+                <div className="relative pt-1 pl-1 text-xs text-red-400">
+                  {formik.errors.emailId}
+                </div>
+              ) : null}
             </div>
           </div>
           <div className="md:flex md:items-center">
@@ -86,8 +76,13 @@ const ForgotPassword = () => {
                 type="number"
                 placeholder="*****"
                 name="userOtp"
-                // {...formik1.getFieldProps("userOtp")}
+                {...formik1.getFieldProps("userOtp")}
               />
+              {formik.touched.userOtp && formik.errors.userOtp ? (
+                <div className="relative pt-1 pl-1 text-xs text-red-400">
+                  {formik.errors.userOtp}
+                </div>
+              ) : null}
             </div>
           </div>
           <div className="md:flex md:items-center">
@@ -96,7 +91,6 @@ const ForgotPassword = () => {
               <button
                 className="shadow bg-pink-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                 type="submit button"
-                onClick={handleOTPSubmit}
               >
                 Proceed
               </button>

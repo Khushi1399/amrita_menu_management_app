@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import useLogin from "../hooks/useLogin";
+import useUpdatePass from "../hooks/useUpdatePass";
 
 const NewPassword = () => {
   const [inputs, setInputs] = useState({});
 
-  const { formik } = useLogin();
+  const { formik } = useUpdatePass();
 
   const handleChange = (event) => {
     setInputs((values) => ({
@@ -38,14 +39,13 @@ const NewPassword = () => {
                 id="password"
                 type="password"
                 placeholder="*****"
-                name="password"
-                {...formik.getFieldProps("password")}
-                // onChange={handleChange}
+                name="userPassword"
+                {...formik.getFieldProps("userPassword")}
               />
             </div>
-            {formik.touched.password && formik.errors.password ? (
+            {formik.touched.userPassword && formik.errors.userPassword ? (
               <div className="relative pt-1 pl-1 text-xs text-red-400">
-                {formik.errors.username}
+                {formik.errors.userPassword}
               </div>
             ) : null}
           </div>
@@ -64,14 +64,13 @@ const NewPassword = () => {
                 id="password"
                 type="password"
                 placeholder="*********"
-                name="password"
-                {...formik.getFieldProps("password")}
-                // onChange={handleChange}
+                name="userCPassword"
+                {...formik.getFieldProps("userCPassword")}
               />
             </div>
-            {formik.touched.password && formik.errors.password ? (
+            {formik.touched.userCPassword && formik.errors.userCPassword ? (
               <div className="relative pt-1 pl-1 text-xs text-red-400">
-                {formik.errors.password}
+                {formik.errors.userCPassword}
               </div>
             ) : null}
           </div>

@@ -2,7 +2,6 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import Toast from "../helper/toast";
-import { useState } from "react";
 
 const useForgotPass = () => {
   const formik = useFormik({
@@ -43,18 +42,19 @@ const useForgotPass = () => {
 
   const handleOTPSubmit = async (values) => {
     console.log("first otp", ...formik.values, ...values);
-    // await axios
-    //   .post("http://192.168.60.110:8080/api/auth/verifyOtp", {
-    //     ...formik.values,
-    //     ...values,
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //     Toast(response?.data?.message);
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+    values.userOtp &&
+      axios
+        .post("http://192.168.60.110:8080/api/auth/verifyOtp", {
+          emailId: "darshansampathkumar@gmail.com",
+          userOtp: "20328",
+        })
+        .then((response) => {
+          console.log(response);
+          Toast(response?.data?.message);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
   };
 
   return { handleSubmit, handleOTPSubmit, formik, formik1 };

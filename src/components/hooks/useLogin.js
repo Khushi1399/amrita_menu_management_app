@@ -27,7 +27,7 @@ const useLogin = () => {
       .post(`${process.env.REACT_APP_API1}signin`, values)
       .then((response) => {
         Toast("User logged in successfully!");
-        navigate("/canteen-selection");
+        navigate("/select");
         Cookies.set("amritaMenu", response?.data?.jwt);
       })
       .catch(function (error) {

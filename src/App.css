@@ -1,0 +1,9 @@
+.rnc__notification-item--default {
+    background-color: #72adec;
+    border-left: 8px solid #0562c7;
+}
+.rnc__notification-item--success {
+    background-color:  #ec4899;
+    border-left: 8px solid #0562c7;
+    ;    
+}
