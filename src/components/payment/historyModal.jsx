@@ -22,9 +22,18 @@ const PaymentMain = (props) => {
       <h2 className="block uppercase tracking-wide text-pink-400 text-2xl font-bold mb-4">
         {props.date}
       </h2>
+      <div className="grid grid-cols-6 capitalize font-bold">
+        <label>Order</label>
+        <label className="pr-6 text-black-900 ">Item Name</label>
+        <label>Qty</label>
+        <label>Price</label>
+        <label>Canteen</label>
+        <label>Total Price</label>
+      </div>
       {props.items.length > 0 ? (
         props.items.map((item) => (
-          <div key={item.id} className="grid grid-cols-5">
+          <div key={item.id} className="grid grid-cols-6">
+            <label>{`${item.orderId}`}</label>
             <label className="pr-6 text-black-900 capitalize">
               {item.itemName}
             </label>

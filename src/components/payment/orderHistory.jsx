@@ -9,11 +9,11 @@ const OrderHistory = () => {
   const navigate = useNavigate();
 
   let orders = Object.values(ordList);
-  const dates = [...new Set(orders[0]?.map((item) => item.creationDateTime))];
+  const dates = [...new Set(orders[1]?.map((item) => item.creationDateTime))];
   let orderList = [];
   for (let i = 0; i < dates.length; i++) {
     orderList.push(
-      orders[0].filter((item) => item.creationDateTime === dates[i])
+      orders[1].filter((item) => item.creationDateTime === dates[i])
     );
   }
 
@@ -22,7 +22,7 @@ const OrderHistory = () => {
       <label className="text-2xl font-bold text-pink-900">ORDER HISTORY</label>
       {dates
         .map((date) =>
-          orders[0].filter((item) => item.creationDateTime === date)
+          orders[1].filter((item) => item.creationDateTime === date)
         )
         ?.map((list) => (
           <HistoryModal
