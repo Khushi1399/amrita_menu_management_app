@@ -38,6 +38,7 @@ const useLogin = () => {
       })
       .catch(function (error) {
         console.log(error);
+        Toast("Please check your credentials!", "Invalid Credentials");
       });
   };
   return { formik, handleSubmit };

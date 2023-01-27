@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import useOrder from "../hooks/useOrder";
 import Timer from "./timer";
 
@@ -12,8 +13,10 @@ const PaymentMain = (props) => {
   const [warning, setWarning] = useState(false);
 
   const { placeOrder, delOrder } = useOrder();
+  const navigate = useNavigate();
 
   const handlePayment = () => {
+    console.log("cldkcldkdjfdjfjfhjkf");
     placeOrder(props.items);
     startTimer();
   };
@@ -37,6 +40,12 @@ const PaymentMain = (props) => {
     setShowBalance((prev) => !prev);
   };
 
+  const redirectHome = () => {
+    navigate("/select");
+  };
+
+  console.log("warn", warning);
+
   const refreshPage = () => {
     window.location.reload(false);
   };
@@ -48,6 +57,12 @@ const PaymentMain = (props) => {
           YOUR ORDER
         </h2>
         {/* {console.log(props.items)} */}
+        <div className="grid grid-cols-4 capitalize font-bold mb-3">
+          <label className="pr-6 text-black-900">Item</label>
+          <label>Qty</label>
+          <label>Price</label>
+          <label>Amount</label>
+        </div>
         {props.items.length > 0 ? (
           props.items.map((item) => (
             <div key={item.id} className="grid grid-cols-4 capitalize">
@@ -63,7 +78,7 @@ const PaymentMain = (props) => {
           </label>
         )}
         {props.items.length > 0 && (
-          <label className="text-lg font-bold font-medium leading-6 text-pink-900">
+          <label className="text-lg font-bold font-medium leading-6 text-pink-900 mb-3">
             Amount :
             <label className="text-lg text-bold font-medium leading-6 text-gray-900">
               {props.amount}
@@ -72,7 +87,7 @@ const PaymentMain = (props) => {
         )}
       </div>
       {showBalance && (
-        <label className="text-lg text-bold text-l font-medium leading-6 text-emerald-900 text-center pt-5">
+        <label className="text-lg text-bold text-l font-medium leading-6 text-emerald-900 text-center pt-5 pl-5">
           Your balance is Rs. {amount}
         </label>
       )}
@@ -98,7 +113,7 @@ const PaymentMain = (props) => {
         <button
           className="shadow bg-pink-500 hover:bg-purple-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded m-5"
           onClick={handlePayment}
-          disabled={timer || props.items.length <= 0}
+          disabled={timer || warning || props.items.length <= 0}
         >
           MAKE PAYMENT
         </button>
@@ -107,6 +122,12 @@ const PaymentMain = (props) => {
           onClick={refreshPage}
         >
           CANCEL ORDER
+        </button>
+        <button
+          className="shadow bg-pink-500 hover:bg-purple-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded m-5"
+          onClick={redirectHome}
+        >
+          HOME
         </button>
       </div>
       {timer && (
